@@ -340,3 +340,55 @@ input[type="tel"] {
   direction: ltr;
   text-align: right;
 }
+/* ===== Mobile fix ===== */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* chhupi hui spam field: ab page ko chaura nahi karegi */
+.hp {
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.q-label,
+.tag,
+.field-error {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 14px 12px 50px;
+  }
+  .header-card {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+  .question-card {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+  .question-head {
+    gap: 10px;
+  }
+  .q-label {
+    font-size: 1.05rem;
+  }
+  .name-urdu {
+    font-size: 2.1rem;
+  }
+  .toast {
+    bottom: 16px;
+    font-size: 0.95rem;
+  }
+}
