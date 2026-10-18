@@ -1,0 +1,13 @@
+{
+  "name": "anar-shah-survey",
+  "version": "1.0.0",
+  "description": "Anar Shah Survey Website - Vercel + Supabase",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}

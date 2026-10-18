@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Panel - Anar Shah Survey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Login -->
+  <section id="loginScreen" class="login-wrap">
+    <form id="loginForm" class="login-card">
+      <h1>Admin Login</h1>
+      <p class="login-sub">Anar Shah Survey</p>
+      <label for="password">Password</label>
+      <input type="password" id="password" autocomplete="current-password" placeholder="Password likhein" required>
+      <p id="loginError" class="login-error"></p>
+      <button type="submit" id="loginBtn" class="btn btn-primary btn-block">Login</button>
+    </form>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard" class="dashboard hidden">
+    <header class="topbar">
+      <h1>Anar Shah Survey - Admin Panel</h1>
+      <button type="button" id="logoutBtn" class="btn btn-outline">Logout</button>
+    </header>
+
+    <div class="stats">
+      <div class="stat-card">
+        <span class="stat-label">Total Responses</span>
+        <span class="stat-value" id="statTotal">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Average Rating</span>
+        <span class="stat-value"><span id="statAvg">0</span> <span class="stat-max">/ 5</span></span>
+        <span class="stat-stars" id="statStars" aria-hidden="true">&#9734;&#9734;&#9734;&#9734;&#9734;</span>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <button type="button" id="refreshBtn" class="btn btn-primary">Refresh karein</button>
+      <span class="updated" id="updatedAt"></span>
+    </div>
+
+    <p id="dashError" class="dash-error"></p>
+
+    <div class="table-wrap">
+      <table id="responsesTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Karobar</th>
+            <th>Kami</th>
+            <th>Behtari</th>
+            <th>Tajweez</th>
+            <th>Rating</th>
+            <th>Phone</th>
+            <th>Extra</th>
+            <th>Tareekh</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <p id="emptyState" class="empty hidden">Abhi koi jawab nahi aya</p>
+    </div>
+  </section>
+
+  <script src="admin.js"></script>
+</body>
+</html>

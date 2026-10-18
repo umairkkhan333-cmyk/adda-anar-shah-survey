@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>انار شاہ سروے</title>
+  <meta name="description" content="انار شاہ کے بارے میں اپنی رائے دیں">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+
+    <!-- ہیڈر -->
+    <header class="header-card">
+      <img
+        src="anar-shah.jpg"
+        alt="انار شاہ"
+        class="profile-photo"
+        width="140"
+        height="140"
+        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 140 140%27%3E%3Crect width=%27140%27 height=%27140%27 fill=%27%23f3ece0%27/%3E%3Ccircle cx=%2770%27 cy=%2755%27 r=%2725%27 fill=%27%238B7355%27/%3E%3Cpath d=%27M20 140c0-30 22-48 50-48s50 18 50 48z%27 fill=%27%238B7355%27/%3E%3C/svg%3E';">
+      <h1 class="name-urdu">انار شاہ</h1>
+      <p class="subtitle">آپ کی رائے بہت اہم ہے</p>
+    </header>
+
+    <!-- سروے فارم -->
+    <form id="surveyForm" novalidate>
+
+      <!-- Honeypot (انسان کے لیے چھپا ہوا) -->
+      <div class="hp" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <!-- سوال 1 -->
+      <section class="question-card">
+        <div class="question-head">
+          <span class="q-number">1</span>
+          <div>
+            <label class="q-label" for="business_idea">آپ کی رائے میں انار شاہ کو کون سا کاروبار شروع کرنا چاہیے؟</label>
+            <span class="tag tag-required">سوال 1 &middot; ضروری</span>
+          </div>
+        </div>
+        <textarea id="business_idea" name="business_idea" rows="4" maxlength="2000" placeholder="یہاں اپنی رائے لکھیں..."></textarea>
+        <p class="field-error" id="err_business_idea"></p>
+      </section>
+
+      <!-- سوال 2 -->
+      <section class="question-card">
+        <div class="question-head">
+          <span class="q-number">2</span>
+          <div>
+            <label class="q-label" for="missing_thing">آپ کے خیال میں کس چیز کی کمی ہے؟</label>
+            <span class="tag tag-required">سوال 2 &middot; ضروری</span>
+          </div>
+        </div>
+        <textarea id="missing_thing" name="missing_thing" rows="4" maxlength="2000" placeholder="کمی کیا ہے؟ یہاں لکھیں..."></textarea>
+        <p class="field-error" id="err_missing_thing"></p>
+      </section>
+
+      <!-- سوال 3 -->
+      <section class="question-card">
+        <div class="question-head">
+          <span class="q-number">3</span>
+          <div>
+            <label class="q-label" for="improve_thing">کس چیز کو بہتر بنایا جا سکتا ہے؟</label>
+            <span class="tag">سوال 3 &middot; اختیاری</span>
+          </div>
+        </div>
+        <textarea id="improve_thing" name="improve_thing" rows="3" maxlength="2000" placeholder="بہتری کے لیے تجویز..."></textarea>
+      </section>
+
+      <!-- سوال 4 -->
+      <section class="question-card">
+        <div class="question-head">
+          <span class="q-number">4</span>
+          <div>
+            <label class="q-label" for="suggestions">آپ کیا کیا ہونا چاہیے یہ چاہتے ہیں؟</label>
+            <span class="tag">سوال 4 &middot; اختیاری</span>
+          </div>
+        </div>
+        <textarea id="suggestions" name="suggestions" rows="3" maxlength="2000" placeholder="اپنی خواہشات لکھیں..."></textarea>
+      </section>
+
+      <!-- سوال 5 -->
+      <section class="question-card">
+        <div class="question-head">
+          <span class="q-number">5</span>
+          <div>
+            <span class="q-label" id="ratingLabel">مجموعی ریٹنگ دیں (1 سے 5 ستارے)</span>
+            <span class="tag tag-required">سوال 5 &middot; ضروری</span>
+          </div>
+        </div>
+        <div class="stars" id="stars" role="radiogroup" aria-labelledby="ratingLabel">
+          <button type="button" class="star" data-value="1" role="radio" aria-checked="false" aria-label="1 ستارہ">&#9733;</button>
+          <button type="button" class="star" data-value="2" role="radio" aria-checked="false" aria-label="2 ستارے">&#9733;</button>
+          <button type="button" class="star" data-value="3" role="radio" aria-checked="false" aria-label="3 ستارے">&#9733;</button>
+          <button type="button" class="star" data-value="4" role="radio" aria-checked="false" aria-label="4 ستارے">&#9733;</button>
+          <button type="button" class="star" data-value="5" role="radio" aria-checked="false" aria-label="5 ستارے">&#9733;</button>
+        </div>
+        <p class="rating-text" id="ratingText">ابھی ریٹنگ نہیں دی</p>
+        <p class="field-error" id="err_rating"></p>
+      </section>
+
+      <!-- سوال 6 -->
+      <section class="question-card">
+        <div class="question-head">
+          <span class="q-number">6</span>
+          <div>
+            <label class="q-label" for="phone">فون نمبر (اختیاری)</label>
+            <span class="tag">سوال 6 &middot; اختیاری</span>
+          </div>
+        </div>
+        <input type="tel" id="phone" name="phone" inputmode="tel" maxlength="20" dir="ltr" placeholder="03XX-XXXXXXX">
+        <p class="field-error" id="err_phone"></p>
+      </section>
+
+      <!-- اضافی -->
+      <section class="question-card extra-box">
+        <div class="question-head">
+          <div>
+            <label class="q-label" for="extra_note">کوئی اضافی بات لکھنا چاہتے ہیں؟</label>
+            <span class="tag">اختیاری</span>
+          </div>
+        </div>
+        <textarea id="extra_note" name="extra_note" rows="4" maxlength="2000" placeholder="یہاں کوئی بھی اضافی بات لکھیں..."></textarea>
+      </section>
+
+      <button type="submit" id="submitBtn" class="submit-btn">سروے بھیجیں 🚀</button>
+    </form>
+
+    <footer class="footer">آپ کا وقت دینے کا بہت شکریہ</footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

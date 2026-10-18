@@ -1,0 +1,289 @@
+/* ===== Admin panel ===== */
+
+:root {
+  --bg: #faf8f3;
+  --primary: #8B7355;
+  --primary-dark: #6f5a40;
+  --accent: #FFD700;
+  --text: #2c3e50;
+  --card: #ffffff;
+  --border: #e8e0d5;
+  --error: #c0392b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ----- Buttons ----- */
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: #f6f1e9;
+}
+
+.btn-block {
+  width: 100%;
+  padding: 14px;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ----- Login ----- */
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 32px 24px;
+}
+
+.login-card h1 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.login-sub {
+  text-align: center;
+  color: #888;
+  margin-bottom: 24px;
+}
+
+.login-card label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 16px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.15);
+}
+
+.login-error {
+  color: var(--error);
+  font-size: 0.95rem;
+  min-height: 1.4em;
+  margin: 8px 0 12px;
+}
+
+/* ----- Dashboard ----- */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px 60px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.topbar h1 {
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid #f0ebe0;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  color: #777;
+  font-size: 0.95rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.stat-max {
+  font-size: 1rem;
+  color: #999;
+  font-weight: 400;
+}
+
+.stat-stars {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.updated {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.dash-error {
+  color: var(--error);
+  min-height: 0;
+  margin-bottom: 10px;
+}
+
+.dash-error:empty {
+  display: none;
+}
+
+/* ----- Table ----- */
+.table-wrap {
+  background: var(--card);
+  border: 1px solid #f0ebe0;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0ebe0;
+}
+
+th {
+  background: #f6f1e9;
+  color: var(--primary-dark);
+  font-weight: 600;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+
+td.text-cell {
+  min-width: 180px;
+  max-width: 280px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+td.nowrap {
+  white-space: nowrap;
+}
+
+.rating-stars {
+  color: var(--accent);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.muted {
+  color: #bbb;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px 16px;
+  color: #888;
+}
+
+@media (max-width: 520px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .topbar h1 {
+    font-size: 1.1rem;
+  }
+}

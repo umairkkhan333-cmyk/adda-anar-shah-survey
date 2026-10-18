@@ -1,0 +1,342 @@
+/* ===== Anar Shah Survey - simple aur saaf design ===== */
+
+:root {
+  --bg: #faf8f3;
+  --primary: #8B7355;
+  --primary-dark: #6f5a40;
+  --accent: #FFD700;
+  --text: #2c3e50;
+  --card: #ffffff;
+  --border: #e8e0d5;
+  --card-border: #f0ebe0;
+  --error: #c0392b;
+  --success: #2e7d32;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 20px 16px 60px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ----- Header ----- */
+.header-card {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 32px 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  background: #f3ece0;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.name-urdu {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.8;
+  color: var(--primary);
+  direction: rtl;
+}
+
+.name-roman {
+  font-size: 1.2rem;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+
+/* ----- Question cards ----- */
+.question-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.question-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.q-number {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.q-label {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.tag-required {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* ----- Inputs ----- */
+textarea,
+input[type="tel"] {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: #fff;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+textarea:focus,
+input[type="tel"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.15);
+}
+
+textarea.invalid,
+input.invalid {
+  border-color: var(--error);
+}
+
+.field-error {
+  color: var(--error);
+  font-size: 0.9rem;
+  margin-top: 8px;
+  min-height: 0;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+/* ----- Stars ----- */
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.star {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 3rem;
+  line-height: 1;
+  padding: 4px 6px;
+  color: #ddd;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+.star.active,
+.star.hover {
+  color: var(--accent);
+}
+
+.star:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.rating-text {
+  text-align: center;
+  color: #777;
+  margin-top: 6px;
+}
+
+/* ----- Extra box ----- */
+.extra-box {
+  border: 2px dashed var(--accent);
+  background: #fffdf5;
+}
+
+/* ----- Submit ----- */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  margin-top: 8px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: var(--primary-dark);
+}
+
+.submit-btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.footer {
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+  margin-top: 28px;
+}
+
+/* Honeypot */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ----- Toast ----- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  max-width: calc(100% - 32px);
+  padding: 14px 22px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 100;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+.toast.success {
+  background: var(--success);
+}
+
+.toast.error {
+  background: var(--error);
+}
+
+/* ----- Bade screens ----- */
+@media (min-width: 600px) {
+  body {
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .star {
+    font-size: 2.6rem;
+    padding: 2px 4px;
+  }
+  .name-urdu {
+    font-size: 2.2rem;
+  }
+}
+/* ===== اردو / RTL ===== */
+body {
+  font-family: 'Noto Naskh Arabic', 'Noto Nastaliq Urdu', system-ui, sans-serif;
+  line-height: 1.9;
+}
+
+.q-label {
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+
+.tag {
+  font-size: 0.95rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+}
+
+.submit-btn {
+  font-size: 1.25rem;
+}
+
+input[type="tel"] {
+  direction: ltr;
+  text-align: right;
+}
